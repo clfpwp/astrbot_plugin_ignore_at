@@ -1,4 +1,4 @@
-name: ignore_at
+name: astrbot_plugin_ignore_at
 desc: 默认忽略@全体成员的消息，无视@机器人使用ignore_at_on打开，ignore_at_off关闭
 help: ignore_at_on打开拦截，ignore_at_off关闭拦截
 version: v1.1
