@@ -3,7 +3,7 @@ from astrbot.api.star import Context, Star, register
 from astrbot.api import logger
 from astrbot.api.message_components import At
 
-@register("ignore_at_all", "Cl_Fu", "一个忽略包含@全体成员消息的插件", "1.0.0", "repo url")
+@register("ignore_at_all", "Cl_Fu", "一个忽略包含@全体成员消息的插件", "1.0.0")
 class IgnoreAtAllPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
@@ -14,6 +14,6 @@ class IgnoreAtAllPlugin(Star):
         for comp in event.message_obj.message:
             if isinstance(comp, At):
                 if str(comp.qq).lower() in {"all", "全体成员"}:
-                    logger.info("检测到为@全体成员，停止事件传播。")
+                    logger.info("检测到为@全体成员。")
                     event.stop_event()
                     return
