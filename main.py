@@ -3,7 +3,7 @@ from astrbot.api.star import Context, Star, register
 from astrbot.api import logger
 from astrbot.api.message_components import At
 
-@register("ignore_at_all", "Your Name", "一个忽略包含@全体成员消息的插件", "1.0.0", "repo url")
+@register("ignore_at_all", "Cl_Fu", "一个忽略包含@全体成员消息的插件", "1.0.0", "repo url")
 class IgnoreAtAllPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
