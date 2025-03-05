@@ -5,7 +5,7 @@ from astrbot.api.star import Context, Star, register
 from astrbot.api import logger
 from astrbot.api.message_components import At
 
-@register("astrbot_plugin_ignore_at", "Cl_Fu", "一个忽略包含@全体成员,以及关闭@唤醒机器人的插件，可通过指令开关@功能", "1.2")
+@register("astrbot_plugin_ignore_at", "Cl_Fu", "一个忽略包含@全体成员,以及关闭@唤醒机器人的插件，可通过指令开关@功能", "1.0.0")
 class IgnoreAtAllPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
@@ -40,11 +40,9 @@ class IgnoreAtAllPlugin(Star):
         for comp in event.message_obj.message:
             if isinstance(comp, At):
                 if self.ignore_all_at:
-                    logger.info("检测到@消息且无视@功能开启。")
                     event.stop_event()
                     return
                 if str(comp.qq).lower() in {"all", "全体成员"}:
-                    logger.info("检测到@全体成员消息。")
                     event.stop_event()
                     return
 
@@ -63,4 +61,3 @@ class IgnoreAtAllPlugin(Star):
         self.ignore_all_at = False
         self.save_config()  # 保存配置
         yield event.plain_result("无视@功能已关闭。")
-
