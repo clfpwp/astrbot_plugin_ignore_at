@@ -5,7 +5,7 @@ from astrbot.api.star import Context, Star, register
 from astrbot.api import logger
 from astrbot.api.message_components import At
 
-@register("astrbot_plugin_ignore_at", "Cl_Fu", "一个忽略包含@全体成员,以及关闭@唤醒机器人的插件，可通过指令开关@功能", "1.0.1")
+@register("astrbot_plugin_ignore_at", "Cl_Fu", "一个忽略包含@全体成员,以及关闭@唤醒机器人的插件，可通过指令开关@功能", "1.2")
 class IgnoreAtAllPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
